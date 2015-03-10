@@ -1,5 +1,5 @@
 {
-	"name": "Simple Linx",
+	"name": "simple-linx",
 	"version": "0.0.1",
 	"dependencies": {
 		"express": "^4",
