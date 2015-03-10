@@ -1,4 +1,6 @@
 var express = require('express');
+var stylus = require('stylus');
+var logger = require('morgan');
 var bodyParser = require('body-parser');
 var cons = require('consolidate');
 var http = require('http');
@@ -10,6 +12,7 @@ mongoose.connect('mongodb://refactoru:refactoru@ds033217.mongolab.com:33217/hero
 
 var app = express();
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static(__dirname + '/public'));
 app.get('/', indexController.index);
 
 // Handlebars
