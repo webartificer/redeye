@@ -8,7 +8,7 @@ var indexController = require('./controllers/index.js');
 
 // Mongoose
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://refactoru:refactoru@ds033217.mongolab.com:33217/heroku_app34743783');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/bookmarks');
 
 var app = express();
 app.use(bodyParser.urlencoded({extended: false}));
@@ -20,6 +20,7 @@ app.engine('hbs', cons.handlebars);
 app.set('view engine', 'hbs');
 
 // Set Port
+require('settings.js');
 app.set('port', process.env.PORT || 8080);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
