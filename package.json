@@ -6,6 +6,9 @@
 		"jade": "^1",
 		"body-parser": "^1"
 	},
+	"engines": {
+		"node": "0.12.x"
+	},
 	"scripts": {
         "start": "node app.js"
     }
