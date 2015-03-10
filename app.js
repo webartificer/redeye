@@ -20,7 +20,6 @@ app.engine('hbs', cons.handlebars);
 app.set('view engine', 'hbs');
 
 // Set Port
-require('settings.js');
 app.set('port', process.env.PORT || 8080);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
