@@ -10,6 +10,10 @@ var indexController = require('./controllers/index.js');
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/bookmarks');
 
+// Seed the database:
+require('./models/seeds/urlSeed.js');
+
+
 var app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(__dirname + '/public'));

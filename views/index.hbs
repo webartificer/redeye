@@ -6,6 +6,35 @@
     <div class="container">
         <h1>{{title}}</h1>
         <hr />
+        <div class="page">
+
+        </div>
+
+        <table class="table striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Url</th>
+                    <th>Tags</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <% _.each(bookmarks, function(bookmark) { %> -->
+                {{#each Bookmark}}
+                    <tr>
+                        <td>{{_id}}</td>
+                        <td><%= bookmark.get('name') %></td>
+                        <td><%= bookmark.get('url') %></td>
+                        <td><%= bookmark.get('tags') %></td>
+                        <td><%= bookmark.get('addDate') %></td>
+                    </tr>
+                {{/each}}
+                <!-- <% }); %> -->
+            </tbody>
+        </table>
+
         <footer>
             <small>Rendered by Handlebars</small>
         <footer>
@@ -14,5 +43,14 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+
+
+<!-- ///////////////////// -->
+
+
+
+
+
+
   </body>
 <html>
