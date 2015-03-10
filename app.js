@@ -2,6 +2,13 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var indexController = require('./controllers/index.js');
 
+// Require mongoose
+var mongoose = require('mongoose');
+
+// Connect to a database
+// mongoose.connect('mongodb://localhost/movies');
+mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds033217.mongolab.com:33217/heroku_app34743783');
+
 var app = express();
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
